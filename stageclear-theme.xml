@@ -3912,61 +3912,7 @@ ul.thread_tools li.poll {
 	<div class="float_right"><a href="{$mybb->settings['bburl']}/private.php?action=dismiss_notice&amp;my_post_key={$mybb->post_code}" title="{$lang->dismiss_notice}" onclick="return MyBB.dismissPMNotice('{$mybb->settings['bburl']}/')"><img src="{$theme['imgdir']}/dismiss_notice.png" alt="{$lang->dismiss_notice}" title="{$lang->dismiss_notice}" /></a></div>
   <div>{$privatemessage_text}</div>
 </div>]]></template>
-		<template name="header" version="1800"><![CDATA[<a name="top" id="top"></a>
-<div class="menu">
-<ul>
-<li id="nav-portal"><a href="{$mybb->settings['bburl']}/portal.php"><i style="font-size: 12px;" class="fa fa-home fa-fw"></i> Home</a></li>
-<li id="nav-forums"> <a href="{$mybb->settings['bburl']}/index.php"><i style="font-size: 12px;" class="fa fa-comments fa-fw"></i> Forums</a></li>
-<li id="nav-search"> <a href="{$mybb->settings['bburl']}/search.php"><i style="font-size: 12px;" class="fa fa-search fa-fw"></i>  {$lang->toplinks_search}</a></li>
-<li id="nav-member"> <a href="{$mybb->settings['bburl']}/memberlist.php"><i style="font-size: 12px;" class="fa fa-users fa-fw"></i> Members</a></li>
-<li id="nav-calendar"> <a href="{$mybb->settings['bburl']}/calendar.php"><i style="font-size: 12px;" class="fa fa-calendar fa-fw"></i> {$lang->toplinks_calendar}</a></li>
-<li id="nav-help"> <a href="{$mybb->settings['bburl']}/misc.php?action=help"><i style="font-size: 12px;" class="fa fa-info fa-fw"></i> {$lang->toplinks_help}</a></li>
-  <li><a href='javascript:;' id="extraslink"><i style="font-size: 14px;" class="fa fa-caret-down fa-fw"></i>Extras</a></li>
-      <ul>
-            </div> 
-  <div id="extraslink_popup" class="popup_menu" style="display: none;">
-      <div class="popup_item_container">
-        <a href="{$mybb->settings['bburl']}/stats.php" class="popup_item">Forum stats</a>
-      </div>
-      <div class="popup_item_container">
-        <a href="{$mybb->settings['bburl']}/showteam.php" class="popup_item">Show team</a>
-      </div>
-      <div class="popup_item_container">
-        <a href="{$mybb->settings['bburl']}/search.php?action=getnew" class="popup_item">{$lang->welcome_newposts}</a>
-      </div>
-      <div class="popup_item_container">
-        <a href="{$mybb->settings['bburl']}/search.php?action=getdaily" class="popup_item">{$lang->welcome_todaysposts}</a>
-      </div>
-      <div class="popup_item_container">
-        <a href="*" class="popup_item">Link five here</a>
-      </div>
-  </div>
-<div class="topbar"> 
-
-<div margin-top: 10px;"> 
-<a href="{$mybb->settings['bburl']}/index.php"><img src="{$theme['imgdir']}/guild_logo.png" alt="{$mybb->settings['bbname']}" /></a></div></div>
-
-<div id="container">
-		<div id="header">
-		<div id="content">
-			<div class="wrapper">
-              <div class="navMenu2" style="padding-bottom:  10px;">{$welcomeblock}</div> 
-              <font color="white">  {$pm_notice}</font>
-				{$bannedwarning}
-				{$bbclosedwarning}
-				{$unreadreports}
-				{$pending_joinrequests}
-				{$awaitingusers}
-              	 <navigation><br />
-                                   
-<script type="text/javascript">
-// <!--
-    if(use_xmlhttprequest == "1")
-    {
-        $("#extraslink").popupMenu();
-    }
-// -->
-</script>]]></template>
+		
 		<template name="headerinclude" version="1801"><![CDATA[<link rel="alternate" type="application/rss+xml" title="{$lang->latest_threads} (RSS 2.0)" href="{$mybb->settings['bburl']}/syndication.php" />
 <link rel="alternate" type="application/atom+xml" title="{$lang->latest_threads} (Atom 1.0)" href="{$mybb->settings['bburl']}/syndication.php?type=atom1.0" />
 <link href='//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
