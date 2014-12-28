@@ -1,0 +1,15 @@
+<tgms:SessionStatusControl
+	xmlns:fuic="Framework.UI.Controls;Button"
+	xmlns:fuicv="Framework.UI.Converters;BoolToValueConverter"
+	xmlns:tgms="Site.Session;SessionStatusControl"
+	x:stylesheet="Site.Session.SessionStatusControl"
+>
+	<div content="{Binding currentUsername, source={x:Singleton tgms:SessionService}}" class="Username" />
+
+	<fuic:Button
+		command="{Binding logoutCommand, source={x:Singleton tgms:SessionService}}"
+		style.opacity="{Binding isLoggedIn, source={x:Singleton tgms:SessionService}, converter={fuicv:BoolToValueConverter trueValue=1, falseValue=0}}"
+	>
+		TAG_Logout
+	</fuic:Button>
+</tgms:SessionStatusControl>

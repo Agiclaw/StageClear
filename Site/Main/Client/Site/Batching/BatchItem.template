@@ -1,0 +1,13 @@
+﻿<fuic:Template
+	xmlns:fuic="Framework.UI.Controls;Button,Template"
+	xmlns:tgmb="Site.Batching;SelectBatchItemTemplateSelector"
+	x:stylesheet="Site.Batching.BatchItem"
+>
+	<fuic:ContentControl content="{Binding}" contentTemplateSelector="{tgmb:SelectBatchItemTemplateSelector}" />
+
+	<fuic:Button
+		command="{Binding removeItemCommand, source={x:Singleton tgmb:BatchService}}"
+		commandParameter="{Binding}">
+		<div class="RemoveBatchItem"/>
+	</fuic:Button>
+</fuic:Template>

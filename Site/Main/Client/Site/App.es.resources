@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary
+	xmlns="Framework;ResourceDictionary"
+	xmlns:js="Javascript"
+>
+	<js:string x:key="TAG_Login">spLogin</js:string>
+  <js:string x:key="TAG_Ok">spOk</js:string>
+  <js:string x:key="TAG_LoggingIn">spLogging in...</js:string>
+  <js:string x:key="TAG_Username">spUsername</js:string>
+  <js:string x:key="TAG_Password">spPassword</js:string>
+  <js:string x:key="TAG_Logout">spLogout</js:string>
+
+  <js:string x:key="TAG_About">spAbout</js:string>
+  <js:string x:key="TAG_Assembly">spAssembly</js:string>
+  <js:string x:key="TAG_Version">spVersion</js:string>
+</ResourceDictionary>

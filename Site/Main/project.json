@@ -1,0 +1,32 @@
+﻿{
+  "webroot": "Client",
+  "dependencies": {
+    "Kestrel": "1.0.0-alpha4",
+    "Microsoft.AspNet.Identity.Authentication": "3.0.0-alpha4",
+    "Microsoft.AspNet.Mvc": "6.0.0-alpha4",
+    "Microsoft.AspNet.PipelineCore": "1.0.0-alpha4",
+    "Microsoft.AspNet.Server.IIS": "1.0.0-alpha4",
+    "Microsoft.AspNet.Security": "1.0.0-alpha4",
+    "Microsoft.AspNet.Security.Cookies": "1.0.0-alpha4",
+    "Microsoft.AspNet.Server.WebListener": "1.0.0-alpha4",
+    "Microsoft.AspNet.Server.Kestrel": "1.0.0-alpha4",
+    "Microsoft.AspNet.StaticFiles": "1.0.0-alpha4",
+    "Microsoft.Framework.Cache.Memory": "1.0.0-alpha4",
+    "Nowin": "0.12.1.0",
+    "System.Security.Claims": "1.0.0-alpha4",
+    "WebPF": ""
+  },
+  "commands": {
+    "web": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:5001",
+    "kestrel": "Microsoft.AspNet.Hosting --server Kestrel --server.urls http://localhost:5004",
+    "nowin": "Microsoft.AspNet.Hosting --server Nowin"
+  },
+  "frameworks": {
+    "aspnet50": {},
+    "aspnetcore50": {
+      "dependencies": {
+        "System.AppContext": "4.0.0.0"
+      }
+    }
+  }
+}

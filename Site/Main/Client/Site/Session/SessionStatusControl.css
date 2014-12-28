@@ -1,0 +1,23 @@
+﻿
+.Site\.Session\.SessionStatusControl {
+	display: block;
+	font-size: 12pt;
+}
+
+.Site\.Session\.SessionStatusControl > div {
+	display: block;
+}
+
+.Site\.Session\.SessionStatusControl > div.Username {
+	font-size: 24pt;
+}
+
+.Site\.Session\.SessionStatusControl > .Framework\.UI\.Controls\.Button {
+	padding: 0em;
+	color: rgba(0, 0, 255, 0.8);
+	transition: color 0.25s;
+}
+
+.Site\.Session\.SessionStatusControl > .Framework\.UI\.Controls\.Button:hover {
+	color: rgba(128, 128, 255, 1);
+}

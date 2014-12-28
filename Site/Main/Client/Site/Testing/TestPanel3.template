@@ -1,0 +1,33 @@
+<tgmt:TestPanel3
+	xmlns:fuic="Framework.UI.Controls;Expander"
+	xmlns:tgmb="Site.Batching;BatchToggleControl"
+	xmlns:tgmt="Site.Testing;TestPanel3"
+	style="display: block; margin:1em; padding: 1em; background: rgba(255, 255, 255, 0.3)"
+	localize="false"
+> 
+	<fuic:Button command="{Binding showObject1Command}">Object 1</fuic:Button>
+	<fuic:Button command="{Binding showObject2Command}">Object 2</fuic:Button>
+
+	<br/>
+	<br/>
+
+	<fuic:Expander
+		header="{Binding objectValue}"
+		content="{Binding objectValue}"
+	>
+		<fuic:Expander.HeaderTemplate>
+			<fuic:template>
+				<div content="{Binding player.name}" />
+			</fuic:template>
+		</fuic:Expander.HeaderTemplate>
+		<fuic:Expander.ContentTemplate>
+			<fuic:template style="display: block; border: 1px solid black; padding: 1em; margin-top: 1em; min-height: 2em;">
+				<tgmb:BatchToggleControl item="{Binding}" />
+
+				<div content="{Binding player.name}"></div>
+				<div content="{Binding level}"></div>
+				<div content="{Binding 'array[1]'}"></div>
+			</fuic:template>
+		</fuic:Expander.ContentTemplate>
+	</fuic:Expander>
+</tgmt:TestPanel3>

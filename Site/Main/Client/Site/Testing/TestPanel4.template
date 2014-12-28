@@ -1,0 +1,21 @@
+<tgmt:TestPanel4
+	xmlns:tgmt="Site.Testing;TestPanel4"
+	xmlns:fuic="Framework.UI.Controls;Button,ToggleButton"
+	style="display: block; margin:1em; padding: 1em; background: rgba(255, 255, 255, 0.3)"
+	localize="false"
+> 
+	<fuic:ToggleButton x:name="ShowButtonToggle">
+		Toggle Display
+	</fuic:ToggleButton>
+
+	<br/>
+
+	<style>
+		.hide { display: none }
+	</style>
+
+	<fuic:Button class.hide="{Binding isChecked, source=ShowButtonToggle}">A random button!</fuic:Button>
+	<br/>
+	<div x:name="testPanel" style="border: 1px solid black; width: 200px; height: 200px; user-select: none;">
+	</div>
+</tgmt:TestPanel4>

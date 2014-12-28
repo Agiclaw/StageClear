@@ -1,0 +1,34 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+	padding: 0px;
+	margin: 0px;
+	overflow-y: none;
+}
+
+body {
+	font-family: Calibri, Arial, Helvetica, san-serif;
+	font-size: 14px;
+	background-color: white;
+	overflow-y: scroll;
+}
+
+img {
+	border: none;
+}
+
+a, a:visited, a:hover {
+	text-decoration: none;
+	color: blue;
+}
+
+h1, h2, h3, h4, h5 {
+	margin: 0em;
+}
+
+#ui-datepicker-div {
+	display: none;
+}

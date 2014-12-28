@@ -1,0 +1,24 @@
+<tgmt:TestPanel1
+	xmlns:tgmt="Site.Testing;TestPanel1"
+	xmlns:fuic="Framework.UI.Controls;CheckBox"
+	style="display: block; margin:1em; padding: 1em; background: rgba(157, 198, 255, 0.1)"
+	localize="false"
+>
+	Hello world!
+	<br/>
+	My value is:
+	<br/>
+	<input type="checkbox" checked="{Binding boolValue, mode=TwoWay}" />
+	<input type="text" value="{Binding intValue, mode=TwoWay, delay=1000, delayFromSource=500}" />
+	<br/>
+	<input type="checkbox" checked="{Binding boolValue, mode=TwoWay}" />
+	<input type="text" value="{Binding intValue, mode=TwoWay}" />
+	<br/>
+	<fuic:CheckBox isChecked="{Binding boolValue, mode=TwoWay}">Hello, world!</fuic:CheckBox>
+	<br/>
+	<div style="font-size: 24pt; font-weight: bold; color: #99DDFF" content="{Binding intValue}" />
+	<br/>
+	<div content="{StaticResource TAG_FooterNote}" />
+	<br/>
+	<div content="{DynamicResource TAG_FooterNote}" style.font-size="{DynamicResource TEST_FontSize, debug=true}"/>
+</tgmt:TestPanel1>

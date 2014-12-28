@@ -1,0 +1,49 @@
+<tgm:MainPanel
+	xmlns:fuic="Framework.UI.Controls;Button,ContentControl,ItemsControl"
+	xmlns:fuicv="Framework.UI.Converters;BoolToValueConverter"
+	xmlns:tgm="Site;MainPanel,AboutPanel"
+	xmlns:tgmb="Site.Batching;BatchInfoControl"
+	xmlns:tgmg="Site.Globalization;LanguageControl"
+	xmlns:tgmsea="Site.Search;SearchControl"
+	xmlns:tgmses="Site.Session;SessionStatusControl"
+	x:stylesheet="Site.MainPanel">
+  
+	<header>
+		<div class="HeaderContents">
+			<fuic:Button command="{Binding showHomeCommand}" class="HeaderLogo">
+			</fuic:Button>
+
+			<div class="SessionInformation">
+				<tgmses:SessionStatusControl />
+
+				<tgmg:LanguageControl />
+			</div>
+
+			<div class="ActionBar">
+				<div class="BatchPanel">
+					<tgmb:BatchInfoControl />
+				</div>
+
+				<div class="SiteCommands">
+					<fuic:ItemsControl itemsSource="{Binding siteCommands}">
+						<fuic:ItemsControl.ItemTemplate>
+							<fuic:template>
+								<fuic:Button command="{Binding command}" content="{Binding name}"/>
+							</fuic:template>
+						</fuic:ItemsControl.ItemTemplate>
+					</fuic:ItemsControl>
+				</div>
+
+				<div class="SearchPanel">
+					<tgmsea:SearchControl x:name="searchControl" />
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<article>
+		<div
+			content="{Binding currentPanel}"
+			style.opacity="{Binding isLoggedIn, source={x:Singleton tgmses:SessionService}, converter={fuicv:BoolToValueConverter trueValue='1', falseValue='0'}}"/>
+	</article>
+</tgm:MainPanel>

@@ -1,0 +1,22 @@
+<tgm:MessageBox
+	xmlns:fuic="Framework.UI.Controls;Button"
+	xmlns:tgm="Site;MessageBox"
+	x:stylesheet="Site.MessageBox"
+>
+	<article>
+		<div class="ImagePanel">
+			<img source="{Binding image}" />
+		</div>
+
+		<div class="RightPanel">
+			<div class="Title"  content="{Binding title}" />
+			<pre><div class="MessageBody" content="{Binding message}" /></pre>
+		</div>
+	</article>
+	
+	<footer>
+		<fuic:Button command="{Binding closeCommand}">
+			TAG_Ok
+		</fuic:Button>
+	</footer>
+</tgm:MessageBox>

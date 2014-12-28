@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary
+	xmlns="Framework;ResourceDictionary"
+	xmlns:js="Javascript"
+  xmlns:fuic="Framework.UI.Controls;ContentPresenter,Template"
+	xmlns:fuicv="Framework.UI.Converters;BoolToValueConverter"
+>
+  <fuic:Template
+    x:key="Framework.UI.Controls.CheckBox"
+    class="Site.Theme.CheckBox"
+    x:stylesheet="Site.Theme.CheckBox"
+  >
+    <div
+      class="CheckBox"
+		  class.ischecked="{Binding isChecked, source={x:This}}"
+		  class.isindeterminate="{Binding isIndeterminate, source={x:This}}"
+	  >
+		  <div class="CheckMark" />
+		  <div class="IndeterminateMark" />
+	  </div>
+	  <div class="CheckBoxContents">
+		  <fuic:ContentPresenter />
+	  </div>
+  </fuic:Template>
+</ResourceDictionary>

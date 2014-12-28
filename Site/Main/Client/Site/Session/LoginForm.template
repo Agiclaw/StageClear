@@ -1,0 +1,49 @@
+<gmss:LoginForm
+	xmlns:uic="Framework.UI.Controls;Button"
+	xmlns:uicv="Framework.UI.Converters;SignToValueConverter"
+	xmlns:gmss="Site.Session;LoginForm"
+	x:stylesheet="Site.Session.LoginForm"
+>
+	<article>
+		<div class="ImagePanel">
+			<img source="{PathResource '/Site/Session/WBLogo.png'}" />
+		</div>
+
+		<div class="ContentPanel">
+			<div
+				class="FieldsPanel"
+				style.left="{Binding state, converter={uicv:SignToValueConverter offset=0, negativeValue='100%', zeroValue='0%', positiveValue='-100%'}}"
+			>
+				<label for="name">TAG_Username</label>		
+				<input name="username" type="name" value="{Binding username, mode=TwoWay}" onkeyup="onFieldKeyUp" />
+				<label for="username">TAG_Password</label>
+				<input name="password" type="password" value="{Binding password, mode=TwoWay}" onkeyup="onFieldKeyUp" >
+			</div>
+			
+			<div
+				class="ProgressPanel"
+				style.left="{Binding state, converter={uicv:SignToValueConverter offset=-1, negativeValue='100%', zeroValue='0%', positiveValue='-100%'}}"
+			>TAG_LoggingIn</div>
+			
+			<div
+				class="ErrorPanel"
+				style.left="{Binding state, converter={uicv:SignToValueConverter offset=-2, negativeValue='100%', zeroValue='0%', positiveValue='-100%'}}"
+				content="{Binding errorMessage}">
+			</div>
+		</div>
+	</article>
+
+	<footer>
+		<uic:Button
+			command="{Binding loginCommand}"
+			style.display="{Binding state, converter={uicv:SignToValueConverter offset=-2, negativeValue='inline-block', zeroValue='none', positiveValue='none'}}">
+			TAG_Login
+		</uic:Button>
+		
+		<uic:Button
+			command="{Binding resetCommand}"
+			style.display="{Binding state, converter={uicv:SignToValueConverter offset=-1, negativeValue='none', zeroValue='none', positiveValue='inline-block'}}">
+			TAG_Ok
+		</uic:Button>
+	</footer>
+</gmss:LoginForm>

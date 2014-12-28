@@ -1,0 +1,78 @@
+@import url(Browser.css);
+@import url(Forms.css);
+@import url(Spinner.css);
+
+.Site\.MainPanel {
+	display: block;
+	position: relative;
+	min-height: 100%;
+}
+
+.Site\.MainPanel > header {
+	box-shadow: 0px 0px 10px rgba(0, 0, 64, 0.5);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+	margin-bottom: 1em;
+	min-width: 40em;
+	background: linear-gradient(to bottom, #eff5ff 2%,#d3e1ed 100%);
+}
+
+.Site\.MainPanel > header > div.HeaderContents {
+	max-width: 1024px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+
+.Site\.MainPanel > header > div.HeaderContents .Framework\.UI\.Controls\.Button {
+	background: none;
+	border: none;
+}
+
+.Site\.MainPanel > header > div.HeaderContents > div.SessionInformation {
+	position: absolute;
+	right: 0.5em;
+	top: 1.0em;
+	bottom: 0em;
+	text-align: right;
+}
+
+.Site\.MainPanel > header > div.HeaderContents > div.SessionInformation > .Site\.Session\.SessionStatusControl {
+	margin-bottom: 0.25em;
+	height: 3.5em;
+}
+
+.Site\.MainPanel > header > div.HeaderContents > div.ActionBar {
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	position: relative;
+	min-height: 2.4em;
+	padding-left: 1.5em;
+}
+
+.Site\.MainPanel > header > div.HeaderContents > div.ActionBar > * {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.Site\.MainPanel > header > div.HeaderContents > div.ActionBar > div.SiteCommands {
+	left: 0em;
+	top: 0.125em;
+	bottom: 0.3em;
+}
+
+.Site\.MainPanel > header > div.HeaderContents > div.ActionBar > div.SearchPanel {
+	position: absolute;
+	right: 0.5em;
+	top: 0.3em;
+	bottom: 0.3em;
+	overflow: hidden;
+}
+
+.Site\.MainPanel > article {
+	max-width: 1024px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.Site\.MainPanel > article > div {
+	transition: opacity 150ms;
+}

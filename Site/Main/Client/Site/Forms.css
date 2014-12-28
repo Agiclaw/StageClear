@@ -1,0 +1,82 @@
+@CHARSET "ISO-8859-1";
+
+label {
+	display: block;
+	font-size: 16px;
+	margin: 0px;
+}
+
+input {
+	font-size: 12px;
+	outline: none;
+	margin: 0px;
+}
+
+input[type=name],
+input[type=text],
+input[type=password] {
+	color: #777;
+	border: 1px solid #c7d0d2;
+}
+
+input[type=name]:hover,
+input[type=text]:hover,
+input[type=password]:hover {
+	border: 1px solid #b6bfc0;
+}
+
+input[type=name]:focus,
+input[type=text]:focus,
+input[type=password]:focus {
+	border: 1px solid #a8c9e4;
+}
+
+input[type=submit],
+input[type=button] {
+	font-size: 14px;
+	font-weight: bold;
+	background-image: -ms-linear-gradient(top, #FFFFFF 0%, #C9C9C9 100%);
+	background-image: -moz-linear-gradient(top, #FFFFFF 0%, #C9C9C9 100%);
+	background-image: -o-linear-gradient(top, #FFFFFF 0%, #C9C9C9 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #C9C9C9));
+	background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #C9C9C9 100%);
+	background-image: linear-gradient(to bottom, #FFFFFF 0%, #C9C9C9 100%);
+	border-radius: 5px;
+	border: 1px solid #666;
+	cursor: pointer;
+}
+
+input[type=submit]:hover,
+input[type=button]:hover {
+	background-image: -ms-linear-gradient(top, #FFFFFF 0%, #DADADA 100%);
+	background-image: -moz-linear-gradient(top, #FFFFFF 0%, #DADADA 100%);
+	background-image: -o-linear-gradient(top, #FFFFFF 0%, #DADADA 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #DADADA));
+	background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #DADADA 100%);
+	background-image: linear-gradient(to bottom, #FFFFFF 0%, #DADADA 100%);
+}
+
+input[type=submit]:active,
+input[type=button]:active {
+	background-image: -ms-linear-gradient(top, #E6E6E6 0%, #BABABA 100%);
+	background-image: -moz-linear-gradient(top, #E6E6E6 0%, #BABABA 100%);
+	background-image: -o-linear-gradient(top, #E6E6E6 0%, #BABABA 100%);
+	background-image: -webkit-gradient(linear, top, left bottom, color-stop(0, #E6E6E6), color-stop(1, #BABABA));
+	background-image: -webkit-linear-gradient(top left, #E6E6E6 0%, #BABABA 100%);
+	background-image: linear-gradient(to bottom, #E6E6E6 0%, #BABABA 100%);
+}
+
+input[type=submit]:disabled,
+input[type=button]:disabled {
+	background-image: -ms-linear-gradient(top, #FFFFFF 0%, #DADADA 100%);
+	background-image: -moz-linear-gradient(top, #FFFFFF 0%, #DADADA 100%);
+	background-image: -o-linear-gradient(top, #FFFFFF 0%, #DADADA 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #DADADA));
+	background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #DADADA 100%);
+	background-image: linear-gradient(to bottom, #FFFFFF 0%, #DADADA 100%);
+}
+
+textarea {
+	resize: none; 
+	font-family: Arial, Helvetica, san-serif;
+}

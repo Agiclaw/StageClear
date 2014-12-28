@@ -1,0 +1,126 @@
+.Site\.Globalization\.LanguageControl {
+	display: inline-block;
+	white-space: nowrap;
+}
+
+.Site\.Globalization\.LanguageControl .Framework\.UI\.Controls\.ToggleButton {
+	border: 1px solid transparent;
+	background: none;
+	padding: 0.1em 0.5em 0.2em 0.5em;
+	transition: all 150ms;
+}
+
+.Site\.Globalization\.LanguageControl .Framework\.UI\.Controls\.ToggleButton.Enabled {
+	background: none !important;
+}
+
+.Site\.Globalization\.LanguageControl .Framework\.UI\.Controls\.ToggleButton.Checked {
+	background: rgba(32, 64, 128, 0.2) !important;
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset;
+}
+
+.Site\.Globalization\.LanguageControl .Framework\.UI\.Controls\.ToggleButton * {
+	vertical-align: middle;
+}
+
+.Site\.Globalization\.LanguageControl img {
+	width: 1em;
+}
+
+.Site\.Globalization\.LanguageControl div.LanguageSelectionPopup {
+	position: absolute;
+	display: none;
+	z-index: 1000;
+}
+
+.Site\.Globalization\.LanguageControl div.LanguageSelectionPopup:focus {
+	outline: none;
+}
+
+.Site\.Globalization\.LanguageControl div.LanguageSelectionPopup.visible {
+	display: block;
+	animation: LanguageSelectionPopupFadeIn 150ms;
+	animation-fill-mode: forwards;
+	-webkit-animation: LanguageSelectionPopupFadeIn 150ms;
+	-webkit-animation-fill-mode: forwards;
+}
+
+@keyframes LanguageSelectionPopupFadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes LanguageSelectionPopupFadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.Site\.Globalization\.LanguageControl div.LanguageSelectionPopupTop {
+	position: absolute;
+	z-index: 2000;
+	height: 1em;
+}
+
+.Site\.Globalization\.LanguageControl div.LanguageSelectionPopupContent {
+	display: inline-block;
+	position: absolute;
+	top: 0.3em;
+	right: -2.2em;
+	display: block;
+	background: rgba( 224, 238, 256, 1 );
+	border-radius: 0.3em;
+	border: 1px solid rgba( 164, 196, 256, 1 );
+	box-shadow: 3px 3px 10px rgba( 32, 64, 128, 0.5 );
+	overflow: hidden;
+}
+
+.Site\.Globalization\.LanguageControl div.LanguageSelectionPopupContent .Framework\.UI\.Controls\.ContentPresenter\.Type {
+	white-space: nowrap;
+}
+
+.Site\.Globalization\.LanguageControl div.LanguageSelectionPopupContent .Framework\.UI\.Controls\.ContentPresenter\.Type .Framework\.UI\.Controls\.Button {
+	background: none;
+	border: none;
+	display: block;
+	transition: all 150ms;
+	font-size: 10pt;
+	border-radius: 0;
+	color: black !important;
+	padding: 0.2em 0.5em;
+	text-align: left;
+}
+
+.Site\.Globalization\.LanguageControl div.LanguageSelectionPopupContent .Framework\.UI\.Controls\.ContentPresenter\.Type .Framework\.UI\.Controls\.Button.Enabled:hover {
+	background: rgba(128, 196, 256, 0.3);
+}
+
+.Site\.Globalization\.LanguageControl div.LanguageSelectionPopupContent .Framework\.UI\.Controls\.ContentPresenter\.Type .Framework\.UI\.Controls\.Button.Disabled .Framework\.UI\.Controls\.ContentPresenter\.Type {
+	cursor: default;
+}
+
+.Site\.Globalization\.LanguageControl div.LanguageSelectionPopupContent .Framework\.UI\.Controls\.ContentPresenter\.Type .Framework\.UI\.Controls\.ContentPresenter\.Type {
+	display: block;
+}
+
+.Site\.Globalization\.LanguageControl div.LanguageSelectionPopupContent .Framework\.UI\.Controls\.ContentPresenter\.Type .Framework\.UI\.Controls\.ContentPresenter\.Type > * {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.Site\.Globalization\.LanguageControl div.LanguageSelectionPopupContent .Framework\.UI\.Controls\.ContentPresenter\.Type .Framework\.UI\.Controls\.ContentPresenter\.Type > img {
+	width: 3em;
+	padding: 0.25em;
+}
+
+.Site\.Globalization\.LanguageControl div.LanguageSelectionPopupContent .Framework\.UI\.Controls\.ContentPresenter\.Type .Framework\.UI\.Controls\.ContentPresenter\.Type > div {
+	padding: 0em 1em;
+	padding-right: 1.5em;
+}

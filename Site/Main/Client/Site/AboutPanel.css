@@ -1,0 +1,68 @@
+﻿.Site\.AboutPanel {
+	display: block;
+}
+
+.Site\.AboutPanel * {
+	vertical-align: middle;
+}
+
+.Site\.AboutPanel > header {
+	display: block;
+	color: rgba(32, 64, 164, 0.5);
+	font-weight: bold;
+	font-size: 18pt;
+	border-bottom: 1px solid rgba(0, 32, 128, 0.4);
+}
+
+.Site\.AboutPanel > article {
+	display: block;
+}
+
+.Site\.AboutPanel > article > div.SiteInformation {
+	display: block;
+	font-size: 12pt;
+}
+
+.Site\.AboutPanel > article > div.SiteInformation > div.Name,
+.Site\.AboutPanel > article > div.SiteInformation > div.Version {
+	display: block;
+	margin: 0.5em 1em;
+}
+
+.Site\.AboutPanel > article > div.AssemblyList {
+	border: 1px solid rgba(0, 32, 128, 0.4);
+}
+
+.Site\.AboutPanel > article > div.AssemblyList > header {
+	font-weight: bold;
+	background: rgba(0, 64, 256, 0.2);
+	border-bottom: 1px solid rgba(0, 32, 128, 0.4);
+	white-space: nowrap;
+}
+
+.Site\.AboutPanel > article > div.AssemblyList > article .Framework\.UI\.Controls\.ContentControl\.Type:nth-child(odd) {
+	display: block;
+	background: rgba(32, 128, 256, 0.1);
+}
+
+.Site\.AboutPanel > article > div.AssemblyList > article .Framework\.UI\.Controls\.ContentControl\.Type:nth-child(even) {
+	display: block;
+}
+
+.Site\.AboutPanel > article > div.AssemblyList > article .Framework\.UI\.Controls\.ContentPresenter\.Type {
+	display: block;
+	white-space: nowrap;
+}
+
+.Site\.AboutPanel > article > div.AssemblyList div.AssemblyName {
+	display: inline-block;
+	
+	margin: 0.25em 0.5em;
+	width: 30em;
+	overflow: hidden;
+}
+
+.Site\.AboutPanel > article > div.AssemblyList div.AssemblyVersion {
+	display: inline-block;
+	overflow: hidden;
+}

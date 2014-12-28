@@ -1,0 +1,6 @@
+<fuic:Template
+	xmlns:fuic="Framework.UI.Controls;Template"
+	style="width: 100px; height: 200px; border: 1px solid green; display: inline-block; margin: 1em; background: rgba(0, 255, 0, 0.4) "
+>
+	<div content="{Binding}" />
+</fuic:Template>

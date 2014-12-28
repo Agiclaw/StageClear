@@ -1,0 +1,48 @@
+<tgmg:LanguageControl
+	xmlns:fg="Framework.Globalization;CultureInfo"
+	xmlns:fuic="Framework.UI.Controls;ToggleButton,ItemsControl,Template"
+	xmlns:fuicv="Framework.UI.Converters;StringConverter"
+	xmlns:tgmg="Site.Globalization;LanguageService,LanguageImageConverter"
+	x:stylesheet="Site.Globalization.LanguageControl"
+>
+	<fuic:ToggleButton
+		x:name="languageListToggleButton"
+		checked="onShowLanguageSelectionPopup"
+	>
+		<img source="{Binding language, source={x:Singleton tgmg:LanguageService}, converter={tgmg:LanguageImageConverter}}" />
+	</fuic:ToggleButton>
+					
+	<div
+		x:name="languageSelectionPopup"
+		class="LanguageSelectionPopup"
+		tabindex="-1"
+		class.visible="{Binding isChecked, source=languageListToggleButton}">
+		
+		<div class="LanguageSelectionPopupTop">
+			<div class="LanguageSelectionTriangle" />
+		</div>
+		
+		<div class="LanguageSelectionPopupContent">
+			<fuic:ItemsControl
+				itemsSource="{Binding availableLanguages, source={x:Singleton tgmg:LanguageService}}"
+			>
+				<fuic:ItemsControl.ItemTemplate>
+					<fuic:Template>
+						<fuic:Button
+							content="{Binding}"
+							command="{Binding setLanguageCommand, source={x:Singleton tgmg:LanguageService}}"
+							commandParameter="{Binding name}"
+						>
+							<fuic:Button.ContentTemplate>
+								<fuic:Template>
+									<img source="{Binding name, converter={tgmg:LanguageImageConverter}}" />
+									<div content="{Binding nativeName, source={fg:CultureInfo name={Binding name}}, converter={fuicv:StringConverter case=Title}}"></div>
+								</fuic:Template>
+							</fuic:Button.ContentTemplate>
+						</fuic:Button>
+					</fuic:Template>
+				</fuic:ItemsControl.ItemTemplate>
+			</fuic:ItemsControl>
+		</div>
+	</div>	
+</tgmg:LanguageControl>

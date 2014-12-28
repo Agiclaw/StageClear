@@ -1,0 +1,35 @@
+﻿<tgm:AboutPanel
+	xmlns:fn="Framework.Net;HttpSource"
+	xmlns:fuic="Framework.UI.Controls;ItemsControl,Template"
+	xmlns:tgm="Site;AboutPanel"
+	x:stylesheet="Site.AboutPanel"
+>
+	<header>
+		TAG_About
+	</header>
+
+	<article dataContext="{Binding value, source={fn:HttpSource url='/Site/Information'}}">
+		<div class="SiteInformation">
+			<div class="Name" content="{Binding Name}" />
+			<div class="Version" content="{Binding Version}" />
+		</div>
+
+		<div class="AssemblyList">
+			<header>
+				<div class="AssemblyName">TAG_Assembly</div>
+				<div class="AssemblyVersion">TAG_Version</div>
+			</header>
+
+			<article>
+				<fuic:ItemsControl itemsSource="{Binding Assemblies}">
+					<fuic:ItemsControl.ItemTemplate>
+						<fuic:Template>
+							<div class="AssemblyName" content="{Binding Name}" />
+							<div class="AssemblyVersion" content="{Binding Version}" />
+						</fuic:Template>
+					</fuic:ItemsControl.ItemTemplate>
+				</fuic:ItemsControl>
+			</article>
+		</div>
+	</article>
+</tgm:AboutPanel>

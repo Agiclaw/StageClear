@@ -1,0 +1,62 @@
+<tgms:SearchResultsPanel
+	xmlns:fuic="Framework.UI.Controls;Button,ItemsControl,Template"
+	xmlns:fuicv="Framework.UI.Converters;BoolToValueConverter,OrConverter,StringConverter"
+	xmlns:tgms="Site.Search;SearchResultsPanel"
+	x:stylesheet="Site.Search.SearchResultsPanel"
+>
+	<aside x:name="searchSectionNavigation">
+		<fuic:ItemsControl itemsSource="{Binding searchResultsControls}">
+			<fuic:ItemsControl.ItemTemplate>
+				<fuic:Template>
+					<a reference="{Binding provider.name, converter={fuicv:StringConverter prefix='#'}}" class="ModuleSearchResultsButton">
+						<img source="{Binding provider.image}"/>
+						<div class="ResultCount">
+							<div content="{Binding resultsCount}" /><div localize="false" style.display="{Binding hasMore, converter={fuicv:BoolToValueConverter trueValue='inline-block', falseValue='none'}}">+</div>
+						</div>
+					</a>
+				</fuic:Template>
+			</fuic:ItemsControl.ItemTemplate>
+		</fuic:ItemsControl>
+	</aside>
+
+	<article>
+		<fuic:ItemsControl itemsSource="{Binding searchResultsControls}">
+			<fuic:ItemsControl.ItemTemplate>
+				<fuic:Template class="SearchResultsSection">
+					<header id="{Binding provider.name}">
+						<img source="{Binding provider.image}"/>
+						<div content="{Binding provider.name}" />
+					</header>
+	
+					<article>
+						<div class="NoResultsFound" class.hasresults="{MultiBinding converter={fuicv:OrConverter}, {Binding isFetching}, {Binding resultsCount}}">
+							TAG_Search_NoResults
+						</div>
+
+						<div class="Searching" style.display="{Binding isFetching, converter={fuicv:BoolToValueConverter trueValue='block', falseValue='none'}}">
+							<div class="spin12blue spinner"></div>
+							<div>TAG_Search_Searching</div>
+						</div>
+
+						<fuic:ContentControl content="{Binding}"></fuic:ContentControl>
+					</article>
+	
+					<footer>
+						<div style.display="{Binding hasMore, converter={fuicv:BoolToValueConverter trueValue='inline-block', falseValue='none'}}">
+							<fuic:Button command="{Binding fetchMoreCommand}">
+								TAG_Search_ShowMoreResults
+							</fuic:Button>
+						</div>
+		
+						<div class="CompletionTime" style.display="{Binding hasFetchStatistics, converter={fuicv:BoolToValueConverter trueValue='inline-block', falseValue='none'}}">
+							<div>TAG_Search_CompletedOn</div>
+							<div content="{Binding fetchTime}" />
+							<div>TAG_Search_CompletedIn</div>
+							<div content="{Binding fetchDuration}" />
+						</div> 
+					</footer>
+				</fuic:Template>
+			</fuic:ItemsControl.ItemTemplate>
+		</fuic:ItemsControl>
+	</article>
+</tgms:SearchResultsPanel>

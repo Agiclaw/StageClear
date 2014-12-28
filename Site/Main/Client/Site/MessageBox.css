@@ -1,0 +1,102 @@
+@CHARSET "ISO-8859-1";
+
+.Site\.MessageBox {
+	display: inline-block;
+	background: #fff;
+	border-radius: 10px;
+	border: 3px solid black;
+	box-shadow: 0px 0px 35px rgba(255, 255, 255, 1);
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.Site\.MessageBox div {
+	display: inline-block;
+}
+
+.Site\.MessageBox > article {
+	padding: 1em;
+}
+
+.Site\.MessageBox > article > div {
+	vertical-align: top;
+}
+
+.Site\.MessageBox > article > div.ImagePanel > img {
+	width: 4em;
+}
+
+.Site\.MessageBox > article > div.RightPanel {
+	text-align: left;
+	margin-left: 1em;
+	margin-bottom: 1em;
+}
+
+.Site\.MessageBox > article > div.RightPanel > .Title {
+	font-size: 18pt;
+	font-weight: bold; 
+	display: block;
+}
+
+.Site\.MessageBox > article > div.RightPanel > .Title * {
+	vertical-align: middle;
+}
+
+.Site\.MessageBox > article > div.RightPanel > pre div.MessageBody {
+	max-width: 60em;
+	max-height: 40em;
+	overflow: auto;
+}
+
+.Site\.MessageBox > article > div.RightPanel > .Title img {
+	width: 0.9em;
+}
+
+.Site\.MessageBox > article > div.RightPanel > div.ContentPanel {
+	position: relative;
+	overflow: hidden;
+	text-align: left;
+	width: 22em;
+	height: 21.1em;
+}
+
+.Site\.MessageBox > article > div.RightPanel > div.ContentPanel > div {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0%;
+	left: 0%;
+	transition: left 150ms;
+}
+
+.Site\.MessageBox > article > div.RightPanel > div.ContentPanel > div.FieldsPanel {
+}
+
+.Site\.MessageBox > article > div.RightPanel > div.ContentPanel > div.FieldsPanel .Title {
+	font-size: 18pt;
+	font-weight: bold;
+	display: block;
+	margin-bottom: 0.5em;
+}
+
+
+.Site\.MessageBox > footer {
+	padding: 0.76em 1em;
+	background-image: -ms-linear-gradient(top left, #F2F2F2 0%, #D1D1D1 100%);
+	background-image: -moz-linear-gradient(top left, #F2F2F2 0%, #D1D1D1 100%);
+	background-image: -o-linear-gradient(top left, #F2F2F2 0%, #D1D1D1 100%);
+	background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #F2F2F2), color-stop(1, #D1D1D1));
+	background-image: -webkit-linear-gradient(top left, #F2F2F2 0%, #D1D1D1 100%);
+	background-image: linear-gradient(to bottom right, #F2F2F2 0%, #D1D1D1 100%);
+	box-shadow: inset 0 1px 1px #fff;
+	border-top: 1px solid #ccc;
+	text-align: right;
+}
+
+.Site\.MessageBox > footer .Framework\.UI\.Controls\.Button {
+	width: 5em;
+	text-align: center;
+	margin-left: 0.25em;
+	font-size: 14pt;
+	padding: 0.25em;
+}

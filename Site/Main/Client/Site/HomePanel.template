@@ -1,0 +1,19 @@
+<tgm:HomePanel
+	xmlns:fuic="Framework.UI.Controls;Template"
+	xmlns:tgm="Site;HomePanel"
+	xmlns:tgms="Site.Search;SearchControl"
+	x:stylesheet="Site.HomePanel"
+>
+	<tgms:SearchControl>
+		<tgms:SearchControl.Template>
+			<fuic:Template>
+				<input
+					x:name="searchQuery"
+					type="text"
+					style="font-size: 16pt; padding: 0.3em; width: 20em;"
+					placeholder="TAG_SearchPlaceholder"
+					value="{Binding query, mode=TwoWay}" />
+			</fuic:Template>
+		</tgms:SearchControl.Template>
+	</tgms:SearchControl>
+</tgm:HomePanel>

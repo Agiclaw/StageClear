@@ -1,0 +1,54 @@
+<tgmt:TestPanel2
+	xmlns:tgmt="Site.Testing;TestPanel2"
+	xmlns:fuic="Framework.UI.Controls;Button,ListBox,Template"
+	xmlns:fuicv="Framework.UI.Converters;StringToIntConverter"
+	style="display: block; margin:1em; padding: 1em; background: rgba(255, 255, 255, 0.3)"
+	localize="false"
+> 
+	Item:
+	<input id="newItemText" type="text" />
+	<fuic:Button command="{Binding addItemCommand}" commandParameter="{Binding value, source=newItemText}">Add Item</fuic:Button>
+
+	<input id="removeItemIndex" type="text" />
+	<fuic:Button command="{Binding removeItemAtCommand}" commandParameter="{Binding value, source=removeItemIndex, converter={fuicv:StringToIntConverter}}">Remove Item</fuic:Button>
+	
+	<fuic:Button command="{Binding setItemTemplateCommand}" commandParameter="{PathResource './TestTemplate.template'}">Template 1</fuic:Button>
+	<fuic:Button command="{Binding setItemTemplateCommand}" commandParameter="{PathResource './TestTemplate2.template'}">Template 2</fuic:Button>
+	<fuic:Button command="{Binding setItemTemplateCommand}" commandParameter="{PathResource './TestTemplate3.template'}">Template 3</fuic:Button>
+
+
+	<br/>
+	<br/>
+	
+	<style>
+		.selected > * {
+			animation: selectedGlow 1s infinite;
+			-webkit-animation: selectedGlow 1s infinite; 
+		}
+
+		@keyframes selectedGlow
+		{
+			0%   { box-shadow: 0px 0px 25px blue; }
+			50%  { box-shadow: 0px 0px 5px blue; }
+			100% { box-shadow: 0px 0px 25px blue; }
+		}
+
+		@-webkit-keyframes selectedGlow
+		{
+			0%   { box-shadow: 0px 0px 25px blue; }
+			50%  { box-shadow: 0px 0px 5px blue; }
+			100% { box-shadow: 0px 0px 25px blue; }
+		}
+	</style>
+
+	<fuic:ListBox
+		itemsSource="{Binding collectionValue}"
+		itemTemplate="{Binding itemTemplate}"
+	>
+		<fuic:ListBox.ItemsPanel>
+			<fuic:Template
+				style="border: 1px solid rgba(0, 0, 0, 0.1); background: rgba(0, 110, 255, 0.10)"
+			/>
+		</fuic:ListBox.ItemsPanel>
+	</fuic:ListBox>
+</tgmt:TestPanel2>

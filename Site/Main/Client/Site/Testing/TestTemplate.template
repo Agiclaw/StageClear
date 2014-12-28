@@ -1,0 +1,10 @@
+<fuic:Template
+	xmlns:fuic="Framework.UI.Controls;Template"
+	xmlns:fuicv="Framework.UI.Converters;StringConverter"
+	style="width: 200px; height: 200px; border: 1px solid blue; display: inline-block; margin: 1em; background: rgba(0, 0, 255, 0.4)"
+> 
+	<div content="{Binding converter={fuicv:StringConverter case='lower'}}"/>
+	<div content="{Binding converter={fuicv:StringConverter case='upper'}}"/>
+	<div content="{Binding converter={fuicv:StringConverter case='sentent'}}"/>
+	<div content="{Binding converter={fuicv:StringConverter case='title'}}"/>
+</fuic:Template>

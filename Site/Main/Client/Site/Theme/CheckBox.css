@@ -1,0 +1,85 @@
+﻿.Site\.Theme\.CheckBox {
+	display: inline-block;
+	background: none;
+	cursor: pointer;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.Site\.Theme\.CheckBox > div.CheckBox,
+.Site\.Theme\.CheckBox > div.CheckBoxContents {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.Site\.Theme\.CheckBox > div.CheckBox {
+	margin-right: 0.3em;
+	width: 1em;
+	height: 1em;
+	position: relative;
+
+	background: rgba(248, 248, 255, 1);
+	box-shadow: inset 0px 0px 1px 1px rgba(32, 64, 128, 1);
+
+	transition: all 150ms;
+}
+
+.Site\.Theme\.CheckBox:hover > div.CheckBox {
+	background: white;
+	box-shadow: inset 0px 0px 1px 1px rgba(64, 128, 255, 1);
+}
+
+.Site\.Theme\.CheckBox > div.CheckBox > div.CheckMark {
+	position: absolute;
+	width: 0.7em;
+	height: 0.3em;
+	left: 0.15em;
+	top: 0.27em;
+	content: '';
+	opacity: 0;
+
+	border: 0.17em solid black;
+	border-top: none;
+	border-right: none;
+
+	transform: rotate(-55deg);
+	
+	transition: all 150ms;
+}
+
+.Site\.Theme\.CheckBox:hover > div.CheckBox > div.CheckMark {
+	border: 0.14em solid black;
+	border-top: none;
+	border-right: none;
+}
+
+.Site\.Theme\.CheckBox > div.CheckBox.ischecked > div.CheckMark {
+	opacity: 1;
+}
+
+.Site\.Theme\.CheckBox > div.CheckBox > div.IndeterminateMark {
+	position: absolute;
+	width: 0.65em;
+	height: 0.65em;
+	left: 0.19em;
+	top: 0.19em;
+	content: '';
+	opacity: 0;
+
+	background: black;
+	border-radius: 0.20em;
+	
+	transition: opacity 150ms;
+}
+
+.Site\.Theme\.CheckBox:hover > div.CheckBox > div.IndeterminateMark {
+	background: #FFFF70;
+}
+
+.Site\.Theme\.CheckBox > div.CheckBox.ischecked2 > div.IndeterminateMark {
+	opacity: 1;
+}

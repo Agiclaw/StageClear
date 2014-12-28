@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary
+	xmlns="Framework;ResourceDictionary"
+	xmlns:js="Javascript"
+>
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary culture="en-US" default="true" />
+    <ResourceDictionary culture="es" />
+    <ResourceDictionary culture="de" />
+    <ResourceDictionary culture="ja" />
+    <ResourceDictionary culture="pt-BR" />
+    <ResourceDictionary culture="zh-Hans" />
+    <ResourceDictionary culture="fr" />
+    <ResourceDictionary source="Site.Theme.Theme"/>
+  </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
