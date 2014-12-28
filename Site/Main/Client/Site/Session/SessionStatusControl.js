@@ -5,12 +5,12 @@ define([
 	using('Framework.UI.Control'),
 	using('Site.Session.SessionService')
 ], function(Control, SessionService) {
-	function SessionStatucControl(options) {
+	function SessionStatusControl(options) {
 		Control.call(this, options);
 	}
 
-	SessionStatucControl.sourcePath = this.url;
-	SessionStatucControl.baseClass = Control;
+	SessionStatusControl.sourcePath = this.url;
+	SessionStatusControl.baseClass = Control;
 
-	return Type.createClass(SessionStatucControl);
+	return Type.createClass(SessionStatusControl);
 });

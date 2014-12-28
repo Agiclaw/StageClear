@@ -5,10 +5,7 @@
 	x:stylesheet="Site.Session.LoginForm"
 >
 	<article>
-		<div class="ImagePanel">
-			<img source="{PathResource '/Site/Session/WBLogo.png'}" />
-		</div>
-
+		<div class="ImagePanel"/>
 		<div class="ContentPanel">
 			<div
 				class="FieldsPanel"
