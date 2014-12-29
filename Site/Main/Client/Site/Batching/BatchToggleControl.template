@@ -1,5 +1,0 @@
-<tgmb:BatchToggleControl
-	xmlns:tgmb="Site.Batching;BatchToggleControl"
->
-	<img source="{Binding image, source={RelativeSource type={x:Type tgmb:BatchToggleControl}}}" />
-</tgmb:BatchToggleControl>

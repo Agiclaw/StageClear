@@ -1,5 +1,0 @@
-<fuic:Template
-	xmlns:fuic="Framework.UI.Controls;Template"
->
-	<div content="{Binding __itemType.name}" />
-</fuic:Template>

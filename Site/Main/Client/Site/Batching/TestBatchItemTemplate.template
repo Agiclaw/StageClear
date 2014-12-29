@@ -1,5 +1,0 @@
-<fuic:Template
-	xmlns:fuic="Framework.UI.Controls;Template"
->
-	<div content="{Binding player.name}" />
-</fuic:Template>

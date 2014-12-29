@@ -172,16 +172,6 @@ define([
 			this.setCurrentPanel(newPanel);
 		}
 
-		// If the control has a query, show the query in the search control.
-		if (this.searchControl) {
-			if (newPanel.getQuery) {
-				this.searchControl.setQuery(newPanel.getQuery());
-			}
-			else {
-				this.searchControl.clearSearch({ shouldFocus: false, goHome: false });
-			}
-		}
-
 		return newPanel;
 	};
 
@@ -275,62 +265,6 @@ define([
 				command: this.showPanel.bind(this, TestPanel4)
 			})
 		]);
-
-		var self = this;
-
-		require([
-			using('Site.Batching.BatchService'),
-	  	    using('Site.Batching.TestBatchItemType'),
-	  	    using('Site.Batching.TestBatchOperation'),
-			using('Site.Search.SearchService'),
-			using('Site.Search.TestSearchProvider'),
-		], function(BatchService, TestBatchItemType, TestBatchOperation, SearchService, TestSearchProvider) {
-			var batchService = BatchService.getInstance();
-
-			batchService.registerItemType(new TestBatchItemType());
-
-			batchService.addOperation(new TestBatchOperation({
-				name: "Ban",
-				group: "Player",
-				canExecute: true,
-				image: Environment.getResourcePath("/Site/Batching/Items.png"),
-				description: "Ban the selected players"
-			}));
-
-			batchService.addOperation(new TestBatchOperation({
-				name: "Unban",
-				group: "Player",
-				canExecute: true,
-				image: Environment.getResourcePath("/Site/Batching/Items.png"),
-				description: "Unban the selected players"
-			}));
-
-			batchService.addOperation(new TestBatchOperation({
-				name: "Credit Currency",
-				group: "Player",
-				canExecute: true,
-				image: Environment.getResourcePath("/Site/Batching/Items.png"),
-				description: "Credit a currency to the selected players"
-			}));
-
-			batchService.addOperation(new TestBatchOperation({
-				name: "Debit Currency",
-				group: "Player",
-				canExecute: false,
-				image: Environment.getResourcePath("/Site/Batching/Items.png"),
-				description: "Credit a currency to the selected players"
-			}));
-
-			var searchService = SearchService.getInstance();
-
-			searchService.registerSearchProvider(new TestSearchProvider());
-			searchService.registerSearchProvider(new TestSearchProvider());
-			//searchService.registerSearchProvider(new TestSearchProvider());
-			//searchService.registerSearchProvider(new TestSearchProvider());
-			//searchService.registerSearchProvider(new TestSearchProvider());
-			//searchService.registerSearchProvider(new TestSearchProvider());
-			//searchService.registerSearchProvider(new TestSearchProvider());
-		});
 	};
 
 	return Type.createClass(MainPanel);

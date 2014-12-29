@@ -4,15 +4,3 @@
 	text-align: center;
 	margin: 10em;
 }
-
-.Site\.HomePanel .Site\.Search\.SearchControl\.Type {
-	display: block;
-}
-
-.Site\.HomePanel .Site\.Search\.SearchControl\.Type input[type=text] {
-	box-shadow: 0px 0px 3px 1px rgba(32, 96, 196, 0.5);
-	border-top: 1px solid rgba(32, 64, 128, 0.5);
-	border-left: 1px solid rgba(32, 64, 128, 0.3);
-	border-right: 1px solid rgba(32, 64, 128, 0.3);
-	border-bottom: 1px solid rgba(32, 64, 128, 0.2);
-}

@@ -2,9 +2,7 @@
 	xmlns:fuic="Framework.UI.Controls;Button,ContentControl,ItemsControl"
 	xmlns:fuicv="Framework.UI.Converters;BoolToValueConverter"
 	xmlns:tgm="Site;MainPanel,AboutPanel"
-	xmlns:tgmb="Site.Batching;BatchInfoControl"
 	xmlns:tgmg="Site.Globalization;LanguageControl"
-	xmlns:tgmsea="Site.Search;SearchControl"
 	xmlns:tgmses="Site.Session;SessionStatusControl"
 	x:stylesheet="Site.MainPanel">
   
@@ -20,10 +18,7 @@
 			</div>
 
 			<div class="ActionBar">
-				<div class="BatchPanel">
-					<tgmb:BatchInfoControl />
-				</div>
-
+			
 				<div class="SiteCommands">
 					<fuic:ItemsControl itemsSource="{Binding siteCommands}">
 						<fuic:ItemsControl.ItemTemplate>
@@ -34,9 +29,6 @@
 					</fuic:ItemsControl>
 				</div>
 
-				<div class="SearchPanel">
-					<tgmsea:SearchControl x:name="searchControl" />
-				</div>
 			</div>
 		</div>
 	</header>

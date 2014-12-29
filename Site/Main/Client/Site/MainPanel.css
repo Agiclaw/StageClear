@@ -59,14 +59,6 @@
 	bottom: 0.3em;
 }
 
-.Site\.MainPanel > header > div.HeaderContents > div.ActionBar > div.SearchPanel {
-	position: absolute;
-	right: 0.5em;
-	top: 0.3em;
-	bottom: 0.3em;
-	overflow: hidden;
-}
-
 .Site\.MainPanel > article {
 	max-width: 1024px;
 	margin-left: auto;

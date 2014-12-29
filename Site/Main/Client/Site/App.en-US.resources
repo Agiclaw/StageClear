@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ResourceDictionary
-	xmlns="Framework;ResourceDictionary"
+	xmlns="Site;ResourceDictionary"
 	xmlns:js="Javascript"
 >
 	<js:string x:key="TAG_Login">Login</js:string>
@@ -22,9 +22,4 @@
   <js:string x:key="TAG_Search_Period">.</js:string>
   <js:string x:key="TAG_SearchPlaceholder">Search...</js:string>
 
-  <js:string x:key="TAG_BatchOperation">Batch Operation</js:string>
-  <js:string x:key="TAG_Clear">Clear</js:string>
-  <js:string x:key="TAG_Import">Import</js:string>
-  <js:string x:key="TAG_Export">Export</js:string>
-  <js:string x:key="TAG_Run">Run</js:string>
 </ResourceDictionary>

@@ -1,6 +1,5 @@
 <tgmt:TestPanel3
 	xmlns:fuic="Framework.UI.Controls;Expander"
-	xmlns:tgmb="Site.Batching;BatchToggleControl"
 	xmlns:tgmt="Site.Testing;TestPanel3"
 	style="display: block; margin:1em; padding: 1em; background: rgba(255, 255, 255, 0.3)"
 	localize="false"
@@ -22,8 +21,6 @@
 		</fuic:Expander.HeaderTemplate>
 		<fuic:Expander.ContentTemplate>
 			<fuic:template style="display: block; border: 1px solid black; padding: 1em; margin-top: 1em; min-height: 2em;">
-				<tgmb:BatchToggleControl item="{Binding}" />
-
 				<div content="{Binding player.name}"></div>
 				<div content="{Binding level}"></div>
 				<div content="{Binding 'array[1]'}"></div>

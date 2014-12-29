@@ -1,9 +1,0 @@
-<tgms:TestSearchResultsControl
-	xmlns:tgms="Site.Search;TestSearchResultsControl"
-	localize="false"
->
-	You searched for
-	<br />
-	<div content="{Binding query}" />
-	<br />
-</tgms:TestSearchResultsControl>
