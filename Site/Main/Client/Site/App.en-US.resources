@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ResourceDictionary
-	xmlns="Site;ResourceDictionary"
+	xmlns="Framework;ResourceDictionary"
 	xmlns:js="Javascript"
 >
 	<js:string x:key="TAG_Login">Login</js:string>
