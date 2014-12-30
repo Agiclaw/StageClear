@@ -11,14 +11,12 @@ define([
 	using('Site.HomePanel'),
 	using('Site.SiteCommand'),
 	using('Site.Globalization.LanguageService'),
-	using('Site.Session.SessionService'),
-	using('Site.Session.LoginForm'),
 	using('Site.Testing.TestPanel1'),
 	using('Site.Testing.TestPanel2'),
 	using('Site.Testing.TestPanel3'),
 	using('Site.Testing.TestPanel4'),
 // @formatter:on
-], function(Environment, RelayCommand, Collection, Panel, CollectionViewSource, Browser, HistoryAction, AboutPanel, HomePanel, SiteCommand, LanguageService, SessionService, LoginForm, TestPanel1, TestPanel2, TestPanel3, TestPanel4) {
+], function(Environment, RelayCommand, Collection, Panel, CollectionViewSource, Browser, HistoryAction, AboutPanel, HomePanel, SiteCommand, LanguageService, TestPanel1, TestPanel2, TestPanel3, TestPanel4) {
 	"use strict";
 
 	/*globals PropertyDescription, Type*/
@@ -54,21 +52,6 @@ define([
 			MainPanel.debugInitialized = true;
 		}
 
-		// Hook into the session service.
-		var sessionService = SessionService.getInstance();
-		sessionService.addIsLoggedInChangedHandler(this.onIsLoggedInChanged, this);
-		sessionService.addTimeRemainingChangedHandler(this.onSessionTimeRemainingChanged, this);
-
-		if (this.pageParams.username) {
-			sessionService.login(this.pageParams.username, this.pageParams.password);
-
-			delete this.pageParams.username;
-			delete this.pageParams.password;
-		}
-		else {
-			sessionService.refreshStatus();
-		}
-
 		this.setProperty(MainPanel.ShowHomeCommandProperty, new RelayCommand({
 			execute: this.showHomePanel.bind(this)
 		}));
@@ -76,10 +59,6 @@ define([
 
 	MainPanel.sourcePath = this.url;
 	MainPanel.baseClass = Panel;
-
-	// 1 hour before they're about to have their session expire, re-prompt
-	// for their credentials.
-	MainPanel.PeemptivePromptDuration = 60 * 60 * 1000;
 
 	MainPanel.CurrentPanelProperty = new PropertyDescription();
 
@@ -100,10 +79,6 @@ define([
 	MainPanel.prototype.onDispose = function() {
 		window.removeEventListener('popstate', this.popStateListener);
 		delete this.popStateListener;
-
-		var sessionService = SessionService.getInstance();
-		sessionService.removeIsLoggedInChangedHandler(this.onIsLoggedInChanged, this);
-		sessionService.removeTimeRemainingChangedHandler(this.onSessionTimeRemainingChanged, this);
 
 		Panel.prototype.onDispose.call(this);
 	};
@@ -191,39 +166,6 @@ define([
 
 	MainPanel.prototype.showHomePanel = function() {
 		this.showPanel(HomePanel);
-	};
-
-	MainPanel.prototype.onIsLoggedInChanged = function() {
-		if (!SessionService.getInstance().getIsLoggedIn()) {
-			this.showLoginForm();
-		} else if (!this.hasLoggedInBefore) {
-			this.hasLoggedInBefore = true;
-			this.loadRequestedPanel();
-		}
-	};
-
-	MainPanel.prototype.onSessionTimeRemainingChanged = function() {
-		if (SessionService.getInstance().getTimeRemaining() < MainPanel.PeemptivePromptDuration) {
-			this.showLoginForm();
-			return;
-		}
-	};
-
-	MainPanel.prototype.showLoginForm = function() {
-		if (this.loginFormVisible) {
-			return;
-		}
-
-		this.loginFormVisible = true;
-
-		var loginForm = new LoginForm();
-		loginForm.show();
-
-		var self = this;
-
-		loginForm.addClosedHandler(function() {
-			delete self.loginFormVisible;
-		});
 	};
 
 	MainPanel.prototype.loadRequestedPanel = function() {

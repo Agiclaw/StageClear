@@ -2,12 +2,10 @@
 // the common functionality.
 define([
 	using('Framework.Application'),
-	using('Site.Globalization.LanguageService'),
-	using('Site.Session.SessionService')
-], function(Application, LanguageService, SessionService) {
+	using('Site.Globalization.LanguageService')
+], function(Application, LanguageService) {
 	"use strict";
 
 	var container = Application.getContainer();
 	container.registerInstance(LanguageService, new LanguageService());
-	container.registerType(SessionService);
 } );

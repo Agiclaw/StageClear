@@ -3,4 +3,11 @@
 	xmlns:tgm="Site;HomePanel"
 	x:stylesheet="Site.HomePanel"
 >
+
+<div class="HomeContents">
+	<fuic:Button command="{Binding showApplicationCommand}" class="Application">
+		<img source="{PathResource './Images/GuildLogo.png'}" />
+	</fuic:Button>
+</div>
+
 </tgm:HomePanel>
