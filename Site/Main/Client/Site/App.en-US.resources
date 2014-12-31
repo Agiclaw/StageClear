@@ -3,23 +3,9 @@
 	xmlns="Framework;ResourceDictionary"
 	xmlns:js="Javascript"
 >
-	<js:string x:key="TAG_Login">Login</js:string>
-  <js:string x:key="TAG_Ok">Ok</js:string>
-  <js:string x:key="TAG_LoggingIn">Logging in...</js:string>
-  <js:string x:key="TAG_Username">Username</js:string>
-  <js:string x:key="TAG_Password">Password</js:string>
-  <js:string x:key="TAG_Logout">Logout</js:string>
-
-  <js:string x:key="TAG_About">About</js:string>
-  <js:string x:key="TAG_Assembly">Assembly</js:string>
-  <js:string x:key="TAG_Version">Version</js:string>
-
-  <js:string x:key="TAG_Search_NoResults">No results were found that matched your query.</js:string>
-  <js:string x:key="TAG_Search_Searching">Searching...</js:string>
-  <js:string x:key="TAG_Search_ShowMoreResults">Show More</js:string>
-  <js:string x:key="TAG_Search_CompletedOn">Completed on</js:string>
-  <js:string x:key="TAG_Search_CompletedIn">in</js:string>
-  <js:string x:key="TAG_Search_Period">.</js:string>
-  <js:string x:key="TAG_SearchPlaceholder">Search...</js:string>
+  <js:string x:key="TAG_Apply">Apply</js:string>
+  <js:string x:key="TAG_Application">Application</js:string>
+  <js:string x:key="TAG_Home">Home</js:string>
+  <js:string x:key="TAG_Forums">Forums</js:string>
 
 </ResourceDictionary>

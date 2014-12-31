@@ -1,0 +1,16 @@
+<tgm:ApplicationPanel
+	xmlns:fuic="Framework.UI.Controls;Template"
+	xmlns:tgm="Site;ApplicationPanel"
+	x:stylesheet="Site.ApplicationPanel"
+>
+
+TAG_APPLICATION
+asdfasd
+asdfa
+sdfasdfa
+d
+
+<div class="Test">
+</div>
+
+</tgm:ApplicationPanel>

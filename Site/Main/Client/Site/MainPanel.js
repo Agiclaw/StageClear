@@ -9,14 +9,11 @@ define([
 	using('Framework.Web.HistoryAction'),
 	using('Site.AboutPanel'),
 	using('Site.HomePanel'),
+	using('Site.ApplicationPanel'),
 	using('Site.SiteCommand'),
 	using('Site.Globalization.LanguageService'),
-	using('Site.Testing.TestPanel1'),
-	using('Site.Testing.TestPanel2'),
-	using('Site.Testing.TestPanel3'),
-	using('Site.Testing.TestPanel4'),
 // @formatter:on
-], function(Environment, RelayCommand, Collection, Panel, CollectionViewSource, Browser, HistoryAction, AboutPanel, HomePanel, SiteCommand, LanguageService, TestPanel1, TestPanel2, TestPanel3, TestPanel4) {
+], function(Environment, RelayCommand, Collection, Panel, CollectionViewSource, Browser, HistoryAction, AboutPanel, HomePanel, ApplicationPanel, SiteCommand, LanguageService ) {
 	"use strict";
 
 	/*globals PropertyDescription, Type*/
@@ -47,13 +44,16 @@ define([
 
 		this.setProperty(MainPanel.SiteCommandsViewSourceProperty, siteCommandsViewSource);
 
-		if (!MainPanel.debugInitialized && this.pageParams.debug) {
-			this.loadDebugComponents();
-			MainPanel.debugInitialized = true;
-		}
-
 		this.setProperty(MainPanel.ShowHomeCommandProperty, new RelayCommand({
 			execute: this.showHomePanel.bind(this)
+		}));
+
+		this.setProperty(MainPanel.ShowApplicationCommandProperty, new RelayCommand({
+			execute: this.showApplicationPanel.bind(this)
+		}));
+
+		this.setProperty(MainPanel.ShowForumsCommandProperty, new RelayCommand({
+			execute: this.redirectToForums.bind(this)
 		}));
 	}
 
@@ -63,6 +63,14 @@ define([
 	MainPanel.CurrentPanelProperty = new PropertyDescription();
 
 	MainPanel.ShowHomeCommandProperty = new PropertyDescription({
+		readOnly: true
+	});
+
+	MainPanel.ShowApplicationCommandProperty = new PropertyDescription({
+		readOnly: true
+	});
+
+	MainPanel.ShowForumsCommandProperty = new PropertyDescription({
 		readOnly: true
 	});
 
@@ -111,10 +119,6 @@ define([
 				constructorArguments: constructorArguments,
 				language: language
 			};
-
-			if (this.pageParams.debug) {
-				historyState.debug = true;
-			}
 
 			var root = Environment.getWorkingDirectory();
 
@@ -168,6 +172,14 @@ define([
 		this.showPanel(HomePanel);
 	};
 
+	MainPanel.prototype.showApplicationPanel = function() {
+		this.showPanel(ApplicationPanel);
+	};
+
+	MainPanel.prototype.redirectToForums = function() {
+		window.location = location.protocol + "//" + location.host + "/forums"
+	};
+
 	MainPanel.prototype.loadRequestedPanel = function() {
 		if (this.pageParams.classFullName) {
 			var classFullName = this.pageParams.classFullName;
@@ -186,27 +198,6 @@ define([
 		}
 
 		this.showHomePanel();
-	};
-
-	MainPanel.prototype.loadDebugComponents = function() {
-		this.getSiteCommands().addRange([
-			new SiteCommand({
-				name: 'Test',
-				command: this.showPanel.bind(this, TestPanel1)
-			}),
-			new SiteCommand({
-				name: 'Test 2',
-				command: this.showPanel.bind(this, TestPanel2)
-			}),
-			new SiteCommand({
-				name: 'Test 3',
-				command: this.showPanel.bind(this, TestPanel3)
-			}),
-			new SiteCommand({
-				name: 'Test 4',
-				command: this.showPanel.bind(this, TestPanel4)
-			})
-		]);
 	};
 
 	return Type.createClass(MainPanel);

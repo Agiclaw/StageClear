@@ -4,10 +4,8 @@
 	x:stylesheet="Site.HomePanel"
 >
 
-<div class="HomeContents">
-	<fuic:Button command="{Binding showApplicationCommand}" class="Application">
-		<img source="{PathResource './Images/GuildLogo.png'}" />
-	</fuic:Button>
-</div>
+<div class="Test" >
+	TAG_Home
+</dev>
 
 </tgm:HomePanel>

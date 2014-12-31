@@ -5,12 +5,30 @@
 	xmlns:tgmg="Site.Globalization;LanguageControl"
 	x:stylesheet="Site.MainPanel">
   
+  	<link rel="stylesheet" media="screen" href="http://openfontlibrary.org/face/press-start-2p" rel="stylesheet" type="text/css"/>
+
 	<header>
 		<div class="HeaderContents">
 			<fuic:Button command="{Binding showHomeCommand}" class="HeaderLogo">
 				<img source="{PathResource './Images/GuildLogo.png'}" />
 			</fuic:Button>
 		</div>
+
+		<div class="Links">
+
+			<fuic:Button command="{Binding showForumsCommand}" >
+				TAG_Forums
+			</fuic:Button>
+
+			<fuic:Button command="{Binding showApplicationCommand}" >
+				TAG_Apply
+			</fuic:Button>
+
+		</div>
 	</header>
 
+	<article>
+	      <div content="{Binding currentPanel, source={x:This}}"></div>
+	</article>
+	
 </tgm:MainPanel>

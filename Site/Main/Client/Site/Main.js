@@ -7,5 +7,5 @@ define([
 	"use strict";
 
 	var container = Application.getContainer();
-	container.registerInstance(LanguageService, new LanguageService());
+	container.registerInstance( LanguageService, new LanguageService() );
 } );
