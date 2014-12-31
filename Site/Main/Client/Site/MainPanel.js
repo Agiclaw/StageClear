@@ -177,7 +177,7 @@ define([
 	};
 
 	MainPanel.prototype.redirectToForums = function() {
-		var parts = window.location.host.split();
+		var parts = window.location.host.split( '.' );
 		window.location = location.protocol + '//forums.' + parts[1] + '.' + parts[2];
 	};
 
