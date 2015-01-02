@@ -8,7 +8,7 @@
   	<link rel="stylesheet" media="screen" href="http://openfontlibrary.org/face/press-start-2p" rel="stylesheet" type="text/css"/>
 
 	<header>
-		<div class="HeaderContents">
+		<div class="SiteLogo">
 			<fuic:Button command="{Binding showHomeCommand}" class="HeaderLogo">
 				<img source="{PathResource './Images/GuildLogo.png'}" />
 			</fuic:Button>
@@ -30,5 +30,5 @@
 	<article>
 	      <div content="{Binding currentPanel, source={x:This}}"></div>
 	</article>
-	
+
 </tgm:MainPanel>

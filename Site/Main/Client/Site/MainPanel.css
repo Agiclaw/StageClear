@@ -9,28 +9,27 @@
 }
 
 .Site\.MainPanel > header {
-	box-shadow: 0px 0px 10px rgba(0, 0, 64, 0.5);
-	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-	border-color: grey;
 	background: #232729;
-	height: 14em;
+	overflow: hidden;
 }
 
-.Site\.MainPanel > header > div.HeaderContents {
-	position: absolute;
-	top: -0.7%;
-	left: 17.5%;
+.Site\.MainPanel > header > div.SiteLogo {
+	width: 58.7em;
+	margin: 0 auto;
 }
 
-.Site\.MainPanel > header > div.HeaderContents .Framework\.UI\.Controls\.Button {
+.Site\.MainPanel > header > div.SiteLogo .Framework\.UI\.Controls\.Button {
 	background: none;
 	border: none;
 }
 
 .Site\.MainPanel > header > div.Links {
-	position: absolute;
-	top: 19%;
-	left: 17.5%;
+    border-top: 2px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    border-color: grey;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
+	margin: 0 auto;
+	width: 70em;
 }
 
 .Site\.MainPanel > header > div.Links .Framework\.UI\.Controls\.Button {
