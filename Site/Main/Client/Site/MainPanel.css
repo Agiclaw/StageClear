@@ -2,6 +2,13 @@
 @import url(Forms.css);
 @import url(Spinner.css);
 
+@font-face {
+    font-family: 'PressStart2PRegular';
+        src: url('/assets/fonts/press-start-2p/6b0a4bbcec8eb53940cbfcb409a788ee/74496d9086d97aaeeafb3085e9957668/PressStart2PRegular.ttf') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+      }
+      
 .Site\.MainPanel {
 	display: block;
 	position: relative;

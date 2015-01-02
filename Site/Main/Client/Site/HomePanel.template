@@ -4,7 +4,7 @@
 	x:stylesheet="Site.HomePanel"
 >
 
-<div class="Test" >
+<div class="Home" >
 	TAG_Home
 </dev>
 

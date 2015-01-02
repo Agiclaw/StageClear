@@ -4,11 +4,9 @@
 	x:stylesheet="Site.ApplicationPanel"
 >
 
-TAG_APPLICATION
-asdfasd
-asdfa
-sdfasdfa
-d
+<div class="Application" >
+	TAG_Application
+</dev>
 
 <div class="Test">
 </div>
