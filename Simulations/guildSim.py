@@ -14,12 +14,27 @@ parser.add_argument('--force', help='Skip changed checks in gear')
 
 args = parser.parse_args()
 
+# Defaults
+if args.region == None:
+	args.region = "us"
+
+if args.server == None:
+	args.server = "kiljaeden"
+
+if args.guild == None:
+	args.guild = "stage clear"
+
+# Load wow apikey
+# Load guilds file
+apikeyContents=open('wowapikey')
+apikey = apikeyContents.readline()
 
 urlRoot = ".api.battle.net/wow"
 
 
+
 def getGuildRoster( guild ):
-	site = "https://" + args.region + urlRoot + "/guild/" + args.server + "/" + guild + "?fields=members"
+	site = "https://" + args.region + urlRoot + "/guild/" + args.server + "/" + args.guild + "?fields=members"
 	return getWoWAPI( site )
 
 def filterGuild( guild, level ):
@@ -47,18 +62,36 @@ guildRoster = getGuildRoster( args.guild )
 filteredRoster = filterGuild( guildRoster, 100 )
 filteredRoster.sort()
 
+# Load history file
+historyData = open('history.json')
+history = json.load(historyData)
+historyData.close()
+
+pprint( history )
 #For any character over the specified ilvl, that has had gear changes in the last hour
 charactersForSimulation = []
+historyEntries = []
+
 for character in filteredRoster:
  itemsInfo = getItems( character )
  ilvl = itemsInfo[ "items" ][ "averageItemLevelEquipped" ]
  lastModified =  itemsInfo[ "lastModified" ]
  items = itemsInfo[ "items" ]
- if( ilvl >= 670 ):
+ if( ilvl >= 670 and "{}{}".format( character, lastModified ) not in history ):
  	print( "{}  {}: {}".format( lastModified, ilvl, character ) )
  	print( "{}".format( int(time.time() ) ) )
+ 	historyEntries.append( "{}{}".format( character, lastModified ) )
+
+#Savw this run
+fileh=open( 'history.json', 'wb')
+json.dump({'history':historyEntries}, fileh, indent=4)
+fileh.close()
+
  #	print( "{}: {}".format( character, ilvl) )
  #	for info in items:
  #		if hasattr(items[info], "__len__") and "id" in items[info]:
  #			print( "{}: {}".format( items[info][ "id" ], items[info][ "name" ] ) )
  #	charactersForSimulation.append( character)
+
+
+
