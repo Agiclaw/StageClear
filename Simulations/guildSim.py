@@ -81,11 +81,15 @@ for character in filteredRoster:
  	print( "{}  {}: {}".format( lastModified, ilvl, character ) )
  	print( "{}".format( int(time.time() ) ) )
  	historyEntries.append( "{}{}".format( character, lastModified ) )
+ 	#Run the simulation
+ 	call( [ "/simulationcraft/engine/simc", "armory={},{},{}".format( args.region, args.server, character ), "iterations=25000", "calculate_scale_factors=1", "html={}/{}.html".format( "sims", character ) ] )
 
-#Savw this run
+#Save this run
 fileh=open( 'history.json', 'wb')
 json.dump({'history':historyEntries}, fileh, indent=4)
 fileh.close()
+
+
 
  #	print( "{}: {}".format( character, ilvl) )
  #	for info in items:
