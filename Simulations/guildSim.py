@@ -2,11 +2,14 @@ import argparse
 import codecs
 import requests
 import json
+import os
 import time
 from pprint import pprint
 from subprocess import call
 
+
 parser = argparse.ArgumentParser(description='Run simc on all members of .')
+parser.add_argument('--bin', help='Full path to the simc binary')
 parser.add_argument('--region', help='Region name' )
 parser.add_argument('--server', help='Server name' )
 parser.add_argument('--guild', help='Guild name')
@@ -56,38 +59,48 @@ def getWoWAPI( site ):
 	j = json.loads( response.content.decode('utf-8') )
 	return j
 
+def writeHistory( history ):
+	#Save this run
+	handle = open( 'history.json', 'r+')
+	json.dump({'history':historyEntries}, handle, indent=4 )
+	handle.close()
+	return
 
 # Main
 guildRoster = getGuildRoster( args.guild )
 filteredRoster = filterGuild( guildRoster, 100 )
 filteredRoster.sort()
 
-# Load history file
-historyData = open('history.json')
-history = json.load(historyData)
+# Load and then delete the history file
+history = []
+historyData = open('history.json', 'r+')
+try: 
+    history = json.load( historyData )
+except ValueError: 
+	history = []
 historyData.close()
 
-pprint( history )
 #For any character over the specified ilvl, that has had gear changes in the last hour
-charactersForSimulation = []
 historyEntries = []
 
+fileh =open( 'history.json', 'w+')
 for character in filteredRoster:
- itemsInfo = getItems( character )
- ilvl = itemsInfo[ "items" ][ "averageItemLevelEquipped" ]
- lastModified =  itemsInfo[ "lastModified" ]
- items = itemsInfo[ "items" ]
- if( ilvl >= 670 and "{}{}".format( character, lastModified ) not in history ):
- 	print( "{}  {}: {}".format( lastModified, ilvl, character ) )
- 	print( "{}".format( int(time.time() ) ) )
- 	historyEntries.append( "{}{}".format( character, lastModified ) )
- 	#Run the simulation
- 	call( [ "/simulationcraft/engine/simc", "armory={},{},{}".format( args.region, args.server, character ), "iterations=25000", "calculate_scale_factors=1", "html={}/{}.html".format( "sims", character ) ] )
+	itemsInfo = getItems( character )
+	ilvl = itemsInfo[ "items" ][ "averageItemLevelEquipped" ]
+	lastModified =  itemsInfo[ "lastModified" ]
+	items = itemsInfo[ "items" ]
+	formattedCharacterInfo = "{} {} {}".format( character, ilvl, lastModified )
+	if( ilvl >= 670 ):
+	 	historyEntries.append( formattedCharacterInfo )
+	 	writeHistory( historyEntries )
 
-#Save this run
-fileh=open( 'history.json', 'wb')
-json.dump({'history':historyEntries}, fileh, indent=4)
-fileh.close()
+	if( ilvl >= 670 ):
+		if( formattedCharacterInfo not in history[ 'history'] ):
+			print( "Modified: {}".format( formattedCharacterInfo ) )
+			call( [ args.bin, "armory={},{},{}".format( args.region, args.server, character ), "threads=7", "thread_priority=low", "iterations=100000", "calculate_scale_factors=1", "html={}/{}_spec01.html".format( "sims", character ) ] )
+			call( [ args.bin, "armory={},{},{}".format( args.region, args.server, character ), "threads=7", "thread_priority=low", "iterations=100000", "calculate_scale_factors=1", "spec=inactive", "html={}/{}_spec02.html".format( "sims", character ) ] )
+	else:
+			print( "Up to Date: {}".format( formattedCharacterInfo ) )
 
 
 
